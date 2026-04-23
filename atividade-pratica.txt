@@ -1,0 +1,17 @@
+Essa atividade faz parte de um projeto maior (um tradutor do Portugol para C-ANSI).
+
+Nessa etapa, você vai fazer a adaptação do projeto que utilizamos como estudo de caso nas aulas ( 27/03/2026 - Estudo de caso : calculadora interativa ) como ponto de partida.
+
+O arquivo de referência para o VisuAlg é esse: VisuAlg_Ref - Resumo.pdf
+	
+tradutor.l tradutor.l
+10 abril 2026, 10:17 AM
+	
+tradutor.y tradutor.y
+10 abril 2026, 10:17 AM
+	
+VisuAlg_Ref - Resumo.pdf VisuAlg_Ref - Resumo.pdf
+10 abril 2026, 09:42 AM
+	
+visualgv25.exe visualgv25.exe
+10 abril 2026, 09:42 AM
