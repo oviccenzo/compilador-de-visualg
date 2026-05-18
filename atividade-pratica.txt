@@ -4,14 +4,14 @@ Nessa etapa, você vai fazer a adaptação do projeto que utilizamos como estudo
 
 O arquivo de referência para o VisuAlg é esse: VisuAlg_Ref - Resumo.pdf
 	
-tradutor.l tradutor.l
+https://ava.iftm.edu.br/pluginfile.php/195000/mod_assign/introattachment/0/tradutor.l?forcedownload=1 tradutor.l
 10 abril 2026, 10:17 AM
 	
-tradutor.y tradutor.y
+https://ava.iftm.edu.br/pluginfile.php/195000/mod_assign/introattachment/0/tradutor.y?forcedownload=1 tradutor.y
 10 abril 2026, 10:17 AM
 	
-VisuAlg_Ref - Resumo.pdf VisuAlg_Ref - Resumo.pdf
+https://ava.iftm.edu.br/pluginfile.php/195000/mod_assign/introattachment/0/VisuAlg_Ref%20-%20Resumo.pdf?forcedownload=1 VisuAlg_Ref - Resumo.pdf
 10 abril 2026, 09:42 AM
 	
-visualgv25.exe visualgv25.exe
+https://ava.iftm.edu.br/pluginfile.php/195000/mod_assign/introattachment/0/visualgv25.exe?forcedownload=1 visualgv25.exe
 10 abril 2026, 09:42 AM
