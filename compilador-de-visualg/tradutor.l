@@ -51,7 +51,7 @@
 "repita"
 
 
-/*Operadores logico */
+/* Operadores logico */
 "e"
 "ou"
 "nao"
