@@ -39,7 +39,28 @@
 /* Adicionando as palavras reservada (a partir da palavras da reservada do visualg)  */
 /* ================================================================================  */
 
-""
+"escreva"      {return ESCREVA;}
+"escreval"     {return ESCREVAL;}
+"leia"         {return LEIA;}
+"entao"
+"enquanto"
+"faca"
+"para"
+"ate"
+"passo"
+"repita"
+
+
+/*Operadores logico */
+"e"
+"ou"
+"nao"
+"<-"
+"<>"
+">="
+"<="
+
+"//"
 
  /* comandos para mostrar a tabela de símbolos no terminal */
 "vars" | 
