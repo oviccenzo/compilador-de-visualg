@@ -1,31 +1,48 @@
+SRC_DIR = ./src
+BIN_DIR = ./bin
+TEST_DIR = ./src/test
+
+# Executável final
 TARGET = tradutor
 
-SRC_DIR = .
-INC_DIR = .
+# Arquivos fonte
+SCANNER = $(SRC_DIR)/$(TARGET).l
+PARSER = $(SRC_DIR)/$(TARGET).y
 
+# parametros das ferramentas
 CC = gcc
-FLEX = flex
+CFLAGS = -O2 -Wall -g -Iinclude -DDEBUG
 BISON = bison
+FLEX = flex
 
-CFLAGS = -I$(INC_DIR) - Wall
+# Regra principal
+all: compilar
+	./$(BIN_DIR)/$(TARGET)
 
-BISON_OUT_C = ${SRC_DIR}/tradutor.tab.c
-BISON_OUT_H = ${SRC_DIR}/tradutor.tab.h
-FLEX_OUT_C = ${SRC_DIR}/lex.yy.c
+compilar: clean parser scanner
+	@mkdir -p $(BIN_DIR)
+	$(CC) $(CFLAGS) -o $(BIN_DIR)/$(TARGET) $(BIN_DIR)/$(TARGET).tab.c $(BIN_DIR)/lex.yy.c $(SRC_DIR)/symtab.c $(SRC_DIR)/ast.c $(SRC_DIR)/mathfuncs.c -lm 
 
-OBJ = ${BISON_OUT_C} ${FLEX_OUT_C} 
+testar: clean
+	@mkdir -p $(BIN_DIR)
+	$(CC) $(CFLAGS) -DTEST -o $(BIN_DIR)/$(TARGET) $(SRC_DIR)/symtab.c $(TEST_DIR)/testes.c -lm 
+	$(BIN_DIR)/$(TARGET)
 
-all: ${TARGET}
 
-$(TARGET) : ${BISON_OUT_C} ${FLEX_OUT_C}
-	$(CC) $(CFLAGS) $(OBJ) -o $(TARGET) -lm
+parser: $(PARSER)
+	@mkdir -p $(BIN_DIR)
+	$(BISON) -d $(PARSER) -o $(BIN_DIR)/$(TARGET).tab.c
 
-$(BISON_OUT_C) $(BISON_OUT_H): $(SRC_DIR)/tradutor.y
-	${BISON} -d -o $(BISON_OUT_C) $(SRC_DIR)/tradutor.y
-	mv ${SRC_DIR}/tradutor.tab.h $(INC_DIR)/
-
-$(FLEX_OUT_C) : $(SRC_DIR)/tradutor.l $(BISON_OUT_H)
-	$(FLEX) -o $(FLEX_OUT_C) $(SRC_DIR)/tradutor.l
+scanner: $(SCANNER)
+	@mkdir -p $(BIN_DIR)
+	$(FLEX) -o $(BIN_DIR)/lex.yy.c $(SCANNER)
 
 clean:
-	rm -f $(TARGET) $(SRC_DIR)/*.tab.c $(SRC_DIR)lex.yy.c $(INC_DIR)/*.tab.h 
+	rm -rf $(BIN_DIR)/*
+
+
+# Meta para criar um backup compactado dos arquivos atuais
+backup:
+	@mkdir -p ./bkp
+	tar -czvf ./bkp/`(date +%y-%m-%d-%H-%M-%S)`.tar.gz Makefile src/* include/*
+
